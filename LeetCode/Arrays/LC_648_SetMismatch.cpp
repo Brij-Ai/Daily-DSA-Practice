@@ -49,6 +49,9 @@ public:
 };
 
 // Solution 2.(imp technique)
+// Time complexity : O(n)
+// Space complexity : O(1)
+// Approach : change the element through
 class Solution
 {
 public:
