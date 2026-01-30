@@ -23,7 +23,6 @@ class Solution
 public:
     vector<int> findErrorNums(vector<int> &nums)
     {
-        vector<int> ans;
         unordered_set<int> st; // Extra space
         int n = nums.size();   // size of List
         int duplicateNum = 0, missingEle = 0, sumOfArray = 0;
@@ -42,9 +41,7 @@ public:
         int sumOfUpToN = n * (n + 1) / 2;
         sumOfArray -= duplicateNum;
         missingEle = sumOfUpToN - sumOfArray;
-        ans.push_back(duplicateNum);
-        ans.push_back(missingEle);
-        return ans;
+        return {duplicateNum, missingEle};
     }
 };
 
