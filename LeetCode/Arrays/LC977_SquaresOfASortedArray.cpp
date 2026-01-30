@@ -18,8 +18,9 @@
 /*
   Approach 2. Using Two pointer (maintining Two pointer)
   Time complexity: O(n)
-  Space complexity: O(1)
+  Space complexity: O(n)
 */
+// Challenge: Solve this problem without any extra space (solve in place)
 
 #include <iostream>
 #include <vector>
@@ -42,3 +43,63 @@ public:
 };
 
 // Solution 2.Two pointer
+// Time complexity: O(n)
+// Space complexity: O(n) Extra space for result
+class Solution
+{
+public:
+  vector<int> sortedSquares(vector<int> &nums)
+  {
+    int n = nums.size();
+    vector<int> res(n);
+    int i = 0, j = n - 1;
+    int k = n - 1;
+    while (k >= 0)
+    {
+      int a = nums[i] * nums[i];
+      int b = nums[j] * nums[j];
+      if (a > b)
+      {
+        res[k] = a;
+        i++;
+      }
+      else
+      {
+        res[k] = b;
+        j--;
+      }
+      k--;
+    }
+    return res;
+  }
+};
+
+// Solution 3. With extra space result arrays storing the nums[i]*nums[i]
+class Solution
+{
+public:
+  vector<int> sortedSquares(vector<int> &nums)
+  {
+    int n = nums.size();
+    vector<int> res(n);
+    int l = 0, r = n - 1;
+    for (int i = 0; i < n; i++)
+    {
+      nums[i] *= nums[i];
+    }
+    for (int pos = n - 1; pos >= 0; pos--)
+    {
+      if (nums[l] > nums[r])
+      {
+        res[pos] = nums[l];
+        l++;
+      }
+      else
+      {
+        res[pos] = nums[r];
+        r--;
+      }
+    }
+    return res;
+  }
+};
