@@ -37,7 +37,6 @@ public:
             }
             st.insert(data);
         }
-
         int sumOfUpToN = n * (n + 1) / 2;
         sumOfArray -= duplicateNum;
         missingEle = sumOfUpToN - sumOfArray;
