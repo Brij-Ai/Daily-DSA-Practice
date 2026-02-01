@@ -52,7 +52,7 @@ public:
 // Solution 2:
 /*
 Approach : first the sort whole array then find duplicate element
-Time complexity: O(n)
+Time complexity: O(nlogn)
 space complexity: O(1)
 */
 
