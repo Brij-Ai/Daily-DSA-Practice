@@ -13,6 +13,10 @@ Example 1:
 Approach 1: With new extra space where stored the our Answer
             Then copy its all elements in the original array
 
+Approach 2: Without any extra space
+            take a new temp a new variable which store only next of the before gets thats position value zero
+Time complexity : O(n)
+Space complexity : O(1)
 */
 
 // Solutions
@@ -45,6 +49,31 @@ public:
         for (int i = 0; i < n; i++)
         {
             arr[i] = cop[i];
+        }
+    }
+};
+// Approach 2:
+class Solution
+{
+public:
+    void duplicateZeros(vector<int> &arr)
+    {
+        int n = arr.size();
+        // making the a temp which store the next of zero
+        int temp = 0, i = 0;
+        while (i < n)
+        {
+            if (arr[i] == 0)
+            {
+                arr.pop_back();
+                i++;
+                temp = arr[i];
+                arr[i] = 0;
+            }
+            else
+            {
+            }
+            i++;
         }
     }
 };
