@@ -15,40 +15,8 @@ The purpose of this repository is to:
 - Learn classic problem-solving patterns
 - Prepare for coding interviews and placements
 
----
-
 ## 🧠 Platforms
 - 🔹 LeetCode  
 - 🔹 GeeksforGeeks  
 
----
-
 ## 📂 Repository Structure
---------------------------
-Daily-DSA-Practice/
-│
-├── README.md
-│
-├── LeetCode/
-│   ├── Arrays/
-│   ├── Strings/
-│   ├── LinkedList/
-│   ├── Stack/
-│   ├── Queue/
-│   ├── Trees/
-│   ├── Graphs/
-│   ├── DynamicProgramming/
-│   └── Misc/
-│
-├── GeeksforGeeks/
-│   ├── Arrays/
-│   ├── Strings/
-│   ├── LinkedList/
-│   ├── Stack/
-│   ├── Queue/
-│   ├── Trees/
-│   ├── Graphs/
-│   ├── DynamicProgramming/
-│   └── Misc/
-│
-└── Notes/
