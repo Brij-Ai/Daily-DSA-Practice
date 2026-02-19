@@ -12,7 +12,6 @@ Output: [13, 14]
 using namespace std;
 
 // Solution using unordered_set to find missing numbers in the given range
-// Time Complexity: O(n + m) where n is the size of the input array and m is the size of the range [low, high]
 class Solution
 {
 public:
@@ -35,6 +34,40 @@ public:
         return ans;
     }
 };
+
+// Alternative solution using unordered_set to find missing numbers in the given range
+class Solution
+{
+public:
+    vector<int> missinRange(vector<int> &arr, int low, int high)
+    {
+        unordered_set<int> freq(arr.size());
+
+        for (; low <= high; low++)
+        {
+            freq.insert(low);
+        }
+
+        for (int i = 0; i < arr.size(); i++)
+        {
+            if (freq.count(arr[i]))
+            {
+                freq.erase(arr[i]);
+            }
+        }
+
+        vector<int> ans;
+
+        for (const auto &ele : freq)
+        {
+            ans.push_back(ele);
+        }
+        sort(ans.begin(), ans.end());
+        return ans;
+    }
+};
+
+// Another solution using unordered_set to find missing numbers in the given range
 vector<int> findMissing(int arr[], int low, int high)
 {
     vector<int> missingNumbers;
